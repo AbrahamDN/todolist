@@ -10,7 +10,7 @@ const mongoose = require("mongoose");
 const _ = require("lodash");
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = 9418 || 3000;
 
 //connect to mongo database
 mongoose.connect("mongodb://localhost:27017/todolistDB", {useNewUrlParser: true});
