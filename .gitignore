@@ -1,14 +1,3 @@
-.DS_Store
-
-#GitHub
-.git/
-
-#Node
-node_modules/
-
-#Heroku
-Procfile
-
 # Logs
 logs
 *.log
