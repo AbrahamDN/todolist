@@ -1,20 +1,35 @@
 <%- include("header") -%>
 
-
-
   <div class="box" id="heading">
     <h1> <%= listTitle %> </h1>
 
+    <div class="extras_toggle" onclick="extras_toggle()">
+      <i class="fal fa-ellipsis-v" style="font-size: 35px;"></i>
+    </div>
     <div id="extras">
-      <div class="extras_wrap">
+      <div class="extras_container box">
+        <div class="header">
+          <b>List(s)</b>
+        </div>
+        <li><a href="/">Default</a></li>
+        <% lists.forEach(function(list){ %>
+          <li><a href="<%= list.name %>"><%= list.name %> </a></li>
+        <% }); %>
 
-        <div class="extras_toggle">
-          <button onclick="toggleFunction()">+</button>
+      </div>
+    </div>
+
+
+    <div id="newList">
+      <div class="newList_wrap">
+
+        <div class="newList_toggle">
+          <button onclick="newList_toggle()">+</button>
         </div>
 
-        <div id="extras_form">
+        <div id="newList_form">
           <form class="newList" action="/customList" method="post">
-            <input type="text" name="customList" placeholder="Create a new list">
+            <input type="text" name="customList" placeholder="Create a new list" maxlength="20">
             <button type="submit">+</button>
           </form>
         </div>
@@ -42,25 +57,11 @@
 
 
       <form class="item" action="/" method="post">
-        <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+        <input type="text" name="newItem" placeholder="New Item" autofocus autocomplete="off">
         <button type="submit" name="list" value="<%= listTitle %>">+</button>
       </form>
   </div>
 
-  <script>
-  function toggleFunction() {
-    let x = document.getElementById("extras_form");
-    let b = document.querySelector(".extras_toggle button");
-    if (x.style.display === "none") {
-      b.classList.add("btn2");
-      x.style.display = "block";
-      b.innerHTML = "-";
-    } else {
-      x.style.display = "none";
-      b.classList.remove("btn2");
-      b.innerHTML = "+";
-    }
-  }
-  </script>
+<script src="/js/script.js"></script>
 
 <%- include("footer") -%>

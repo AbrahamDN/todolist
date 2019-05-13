@@ -5,6 +5,7 @@ html {
   font-family: 'Montserrat', sans-serif;
   position: relative;
   overflow-x: hidden;
+  color: #263238;
 }
 
 *{
@@ -112,36 +113,93 @@ input[type="text"]:focus {
 }
 
 
-#extras{
-  width: 80%;
+
+.extras_toggle, #newList{
   position: absolute;
-  right: 0;
+  margin-top: -15%;
+}
+
+.extras_toggle{
+  height: 58px;
+  display: flex;
+  align-items: center;
+  margin-left: 30px;
+  cursor: pointer;
+  transition: opacity 200ms;
+}
+
+.extras_toggle:hover{
+  opacity: 0.6;
+  transition: opacity 200ms;
+}
+
+#extras{
+  position: absolute;
   margin-top: -14.56%;
+  margin-left: -24.5vw;
+  width: 22vw;
+  display: none;
+}
+
+.extras_container{
+  min-height: 200px;
+  background: #fff;
+}
+
+.extras_container.box{
+  margin: 0;
+  overflow: hidden;
+}
+
+.header{
+  background-color: #607d8b;
+  padding: 5px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.extras_container li{
+  padding: 10px;
+  display: inherit;
+  border-bottom: solid 1px #eaeaea;
+}
+.extras_container li:nth-child(2n+1){
+  background-color: rgba(0, 0, 0, .02);
+}
+.extras_container li:hover{
+  background-color: #edf0f2;
+}
+
+
+
+#newList{
+  width: 80%;
+  right: 0;
   margin-right: -60%;
 }
 
-.extras_wrap{
+.newList_wrap{
   display: flex;
   align-items: stretch;
   padding: 2.5px 15px;
 }
 
-.extras_toggle{
+.newList_toggle{
   width: 50px;
 }
 
-#extras_form{
+#newList_form{
   display: none;
-  margin-left: 25px;
+  margin-left: 12%;
 }
 
-#extras_form{
+#newList_form{
   display: none;
 }
 
 .newList{
   display: flex;
   align-items: stretch;
+  width: 22.5vw;
 }
 
 .newList input[type="text"]{
@@ -166,7 +224,7 @@ input[type="text"]:focus {
 }
 
 .btn2{
-  border-radius:  6px 0 0 6px;
+  background-color: rgba(255, 0, 0, 0);
   height: 55px;
 }
 

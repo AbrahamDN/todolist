@@ -34,10 +34,14 @@ const item3 = new Item({
 });
 
 const item4 = new Item({
-  name: "You can create a new list by hitting the Plus (+) button on the header above!"
+  name: "Double click the right + button in the header to make a new list"
 });
 
-const defaultItems = [item1, item2, item3, item4];
+const item5 = new Item({
+  name: "Double click the left ... ellipsis to view your custom lists."
+});
+
+const defaultItems = [item1, item2, item3, item4, item5];
 
 const listSchema = {
   name: String,
@@ -61,7 +65,13 @@ app.get("/", function(req, res) {
       });
       res.redirect("/");
     } else {
-      res.render("list", {listTitle: "Today", newListItems: foundItems});
+      List.find({}, function(err, lists){
+
+        if (!err){
+          res.render("list", {lists: lists, listTitle: "Today", newListItems: foundItems});
+        }
+      });
+
     }
   });
 
@@ -81,15 +91,20 @@ app.get("/:customListName", function(req, res){
         list.save();
         res.redirect("/" + customListName);
       } else {
-        //Show an existing list
+        //Show existing list
+        List.find({}, function(err, lists){
 
-        res.render("list", {listTitle: foundList.name, newListItems: foundList.items});
+          if (!err){
+          res.render("list", {
+            lists: lists,
+            listTitle: foundList.name,
+            newListItems: foundList.items
+          });
+          }
+        });
       }
     }
   });
-
-
-
 });
 
 app.post("/", function(req, res){
