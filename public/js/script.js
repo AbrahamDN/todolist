@@ -1,24 +1,28 @@
 
-function newList_toggle() {
-  let x = document.getElementById("newList_form");
-  let b = document.querySelector(".newList_toggle button");
-  if (x.style.display === "none") {
-    b.classList.add("btn2");
-    x.style.display = "block";
-    b.innerHTML = "-";
-  } else {
-    x.style.display = "none";
-    b.classList.remove("btn2");
-    b.innerHTML = "+";
-  }
+let menu = document.getElementById("menu");
+let crtList = document.getElementById("crt_list");
+let deleteFrm = document.getElementById("delete_frm");
 
-}
+function menuToggle() {
+  let menuToggle = document.getElementById("menu-toggle");
 
-function extras_toggle(){
-  let e = document.getElementById("extras");
-  if (e.style.display === "none") {
-    e.style.display = "block";
+  if (menu.style.display === "none") {
+    menu.style.display="block";
+    menuToggle.innerHTML='<i class="fal fa-minus"></i>';
   } else {
-    e.style.display = "none";
+    menu.style.display="none";
+    menuToggle.innerHTML='<i class="fal fa-bars"></i>';
   }
-}
+};
+
+function listToggle() {
+  let crtListToggle = document.getElementById("crt_list-toggle");
+
+  if (crtList.style.display === "none") {
+    crtList.style.display="block";
+    crtListToggle.innerHTML='<i class="fal fa-times"></i>';
+  } else {
+    crtList.style.display="none";
+    crtListToggle.innerHTML='<i class="fal fa-plus"></i>';
+  }
+};

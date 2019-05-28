@@ -1,0 +1,262 @@
+body{
+  background-color: darkgrey;
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  background-image: linear-gradient(to bottom right, #30343F, #F06543 150%);
+  color: #263238;
+}
+
+*{
+  margin: 0;
+}
+
+a{
+  color: inherit;
+  text-decoration: none;
+}
+
+li {
+  display: block;
+  border-top: 2px solid #ECEFF1;
+  padding: 10px 5px;
+}
+li:hover, .item:hover{
+  background-color: #ECEFF1;
+}
+
+hr{
+  margin: 5px 0;
+}
+
+button{
+  min-width: 52px;
+  min-height: 52px;
+  background: #FF9800;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+#wrap{
+  position: relative;
+}
+
+#heading{
+  text-align: center;
+  background: #F44336;
+  color: #fff;
+  padding: 4% 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+#customList #heading{
+  background: rgb(46,70,106);
+  background: -webkit-linear-gradient(70deg, rgba(46,70,106,1) 0%, rgba(220,45,45,1) 99%);
+  background: -o-linear-gradient(70deg, rgba(46,70,106,1) 0%, rgba(220,45,45,1) 99%);
+  background: linear-gradient(160deg, rgba(46,70,106,1) 0%, rgba(220,45,45,1) 99%);
+
+}
+
+#container{
+  background-color: #fff;
+  min-height: 350px;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.toggle{
+  width: 50px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.essentials{
+  position: absolute;
+  width: 100%;
+}
+
+.box{
+  background-color: #eceff1;
+  min-height: 100px;
+  padding: 30px;
+  border-bottom: 3px solid #B0BEC5;
+  text-align: center;
+  color: #424242;
+}
+
+.box#crt_list{
+  background-color: #c8e6c9;
+  border-bottom: 3px solid #a5d6a7;
+}
+
+#menu{
+  display: none;
+  z-index: 1;
+}
+
+#crt_list{
+  display: none;
+}
+
+#lists input[type="checkbox"]{
+  margin-right: 30px;
+}
+
+.item{
+  display: flex;
+  border-top: 2px solid #ECEFF1;
+}
+
+.flex_lbl input{
+  height: 40px;
+  width: 70%;
+  font-size: 1.1em;
+}
+
+.flex_lbl{
+  display: flex;
+  align-items: stretch;
+  margin-top: 10px;
+}
+
+.flex_lbl button{
+  width: 15%;
+  background: #009688;
+  border-radius: 0 4px 4px 0;
+}
+
+#customList .flex_lbl button{
+  background: #37474F;
+}
+
+input[type="text"]{
+  padding: 5px 20px;
+  border-radius: 4px 0 0 4px;
+  border: 2px solid #ddd;
+}
+
+.item{
+  padding: 30px;
+}
+
+#bottom{
+  display: flex;
+  align-items: baseline;
+  padding: 20px;
+  padding-bottom: 30px;
+  background: #ECEFF1;
+}
+
+.submit_frm .flex_lbl{
+  margin: 5px 20px;
+}
+
+/*//////////////////////// Desktop Version ////////////////////////////////*/
+
+@media only screen and (min-width: 768px) {
+
+  #wrap{
+    width: 50%;
+    margin: 0 auto;
+    overflow-x: hidden;
+    box-shadow: 5px 8px 30px 2px rgba(26,26,26,0.13);
+  }
+
+  .wrapper{
+    padding: 50px;
+  }
+
+  #wrap, .box{
+    border-radius: 10px;
+  }
+
+  .box{
+    position: fixed;
+    padding: 0;
+    overflow: hidden;
+    width: 25%;
+  }
+
+  .box#menu, .box#crt_list{
+    top: 0;
+    margin-top: 50px;
+    padding-bottom: 10px;
+    background: #fff;
+  }
+
+  .box#menu{
+    float: left;
+    left: 0;
+    margin-left: 1%;
+  }
+
+  .box#menu h4, .box#crt_list h4{
+    background: #F44336;
+    padding: 6%;
+    color: #fff;
+  }
+
+  #customList .box#menu h4, #customList .box#crt_list h4{
+    background: rgb(46,70,106);
+    background: -webkit-linear-gradient(-55deg, rgba(46,70,106,1) 0%, rgba(220,45,45,1) 99%);
+  }
+
+  .box#crt_list{
+    float: right;
+    right: 0;
+    margin-right: 1%;
+  }
+
+  .essentials .flex_lbl{
+    display: block;
+    width: 100%;
+  }
+
+  .essentials .flex_lbl button{
+    border-radius: 4px;
+    margin-top: 5px;
+    width: 90%;
+  }
+  .essentials .box#crt_list .flex_lbl input{
+    border-radius: 4px;
+    font-size: inherit;
+  }
+
+  .submit_frm{
+    width: 100%;
+  }
+
+
+
+}
+
+/*//////////////////////// Mobile Version ////////////////////////////////*/
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightgrey;
+    overflow-x: hidden;
+  }
+
+  #wrap{
+    width: 100%;
+    display: block;
+  }
+
+  #heading{
+    padding: 10% 0;
+  }
+
+  .box{
+    min-height: 20px;
+  }
+
+}
+
+/* FOOTER */
+footer{
+  padding: 20px;
+  text-align: center;
+}

@@ -1,0 +1,20 @@
+<div class="essentials">
+
+  <div class="box" id="menu">
+    <h4>LISTS</h4>
+    <li><a href="/">Welcome</a></li>
+    <% lists.forEach(function(list){ %>
+      <li><a href="<%= list.name %>"><%= list.name %> </a></li>
+    <% }); %>
+  </div>
+  <div class="box" id="crt_list">
+      <h4>Create a new list</h4>
+      <form action="/customList" method="post">
+      <label class="flex_lbl">
+        <input type="text" name="customList" placeholder="List Name" maxlength="30">
+        <button type="submit">+</button>
+      </label>
+    </form>
+  </div>
+
+</div>

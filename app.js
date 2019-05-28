@@ -1,18 +1,21 @@
-//jshint esversion:6
-
-const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-const _ = require("lodash");
+const ejs = require("ejs");
+const express = require("express");
+const _ = require('lodash');
 
 const app = express();
+const port = 3000;
 
-app.set('view engine', 'ejs');
-
+//Enable EJS
+app.set("view engine", "ejs");
+//Enable bodyParser
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://localhost:27017/todolistDB", {useNewUrlParser: true});
+//connect to mongodb w/ mongoose
+mongoose.connect("mongodb://localhost:27017/mytodo", {useNewUrlParser: true});
+////////////////////////////////////////////////////////////////////////////////
 
 const itemsSchema = {
   name: String
@@ -95,7 +98,7 @@ app.get("/:customListName", function(req, res){
         List.find({}, function(err, lists){
 
           if (!err){
-          res.render("list", {
+          res.render("customList", {
             lists: lists,
             listTitle: foundList.name,
             newListItems: foundList.items
@@ -160,7 +163,8 @@ app.post("/delete", function(req, res){
 
 });
 
-
-app.listen(3000, function() {
-  console.log("Server started on port 3000");
+////////////////////////////////////////////////////////////////////////////////
+//Start server
+app.listen(port, function(){
+  console.log("Server running on port:" + port);
 });
