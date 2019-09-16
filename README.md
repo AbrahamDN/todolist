@@ -5,7 +5,7 @@ NodeJs web App
 
 Add and view global (public) notes.
 
-# How to Use 
+## How to Use 
 
 • Write your note in the input box
 
@@ -18,7 +18,7 @@ Add and view global (public) notes.
 • Double click the hamburger menu to view existing lists [they are hyperlinks]
 
 
-# Suggested Improvements
+## Suggested Improvements
 
 - Add delete all list inputs button
 - Improve delete method (Add bin icon/ input checked > click delete button)
